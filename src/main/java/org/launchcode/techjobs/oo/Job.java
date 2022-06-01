@@ -38,9 +38,9 @@ public class Job {
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
-        if (!(o instanceof Employer)) return false;
-        Employer employer = (Employer) o;
-        return getId() == employer.getId();
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return id == job.id;
     }
 
     @Override
@@ -55,9 +55,6 @@ public class Job {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -115,12 +112,12 @@ public class Job {
         if (coreCompetency.getValue().equals("") || coreCompetency.getValue()==null){
             coreCompetency.setValue("Data not available");
         }
-        return "\nID: " + id +"\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+        return "\nID: " + id + '\n' +
+                "Name: " + name + '\n' +
+                "Employer: " + employer + '\n'+
+                "Location: " + location + '\n' +
+                "Position Type: " + positionType + '\n' +
+                "Core Competency: " + coreCompetency + '\n' ;
 
     }
 }

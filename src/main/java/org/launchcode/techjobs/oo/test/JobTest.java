@@ -67,8 +67,8 @@ public class JobTest {
         Job job = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         job.setName("name");
 
-        assertEquals("\n",job.toString().charAt(0));
-        assertEquals("\n",job.toString().charAt(job.toString().length() - 1));
+        assertEquals('\n',job.toString().charAt(0));
+        assertEquals('\n',job.toString().charAt(job.toString().length() - 1));
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
